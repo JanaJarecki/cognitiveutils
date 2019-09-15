@@ -1,10 +1,20 @@
 # cogsciutils
-An R-package with fun to use helper functions for social scientists and cognitive modellers. Note, the package is being developed and tweaked, it isn't polished or finished.
+An R-package with helper functions for social scientists and cognitive psychologists. Note, the package is currently being developed (bleeding edge).
 
-Maybe useful: a `participants()` function to easily print demographic summary sections of your data.
+# What you can do
 
-#### Developmental stuff
-This will likely not work, don't use. A goodness of fit functions `gof()` to compare predictions (discrete or continuous) against observed data. So far it includes likelihood (binomial and normal), SSE, WSSE, MSE, WMSE (under active development). A `choicerule()` to apply choice rules. So far it includes types softmax, argmax, epsilon greedy decision rules (under developement).
+ - **Goodness of fit** `gof()` is general function to calculate different goodness-of-fit measures, e.g.
+   - Loglikelihood, see also `Loglikelihood()`
+   - Squared error measures, see also `MSE()`, `SSE()`
+   - Percent accuracy, see also `Accuracy()`
+   - and more.
+ - **Choice rules**  `choicerule()` is a general function to apply choice rules (action selection rules) to predictions, e.g.,
+   - Soft maximum, see also`cr_softmax()`
+   - Luce's rule, see also `cr_luce()`
+   - Argmax, see also `cr_argmax()`
+   - Epsilon greedy, see also `cr_epsilon()`
+   - and more.
+  - **Demographics** `participants()` is a function to nicely print demographic summary sections of your data
 
 # Installation
 ## First time installation
