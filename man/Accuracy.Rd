@@ -2,20 +2,19 @@
 % Please edit documentation in R/Accuracy.R
 \name{Accuracy}
 \alias{Accuracy}
-\title{Classification Accuracy
-\code{Accuracy()} computes the percent identical values, controlling for perfect chance-level}
+\title{Classification Accuracy}
 \usage{
 Accuracy(obs, pred, na.rm = FALSE, response = c("discrete",
   "continuous"), ...)
 }
 \arguments{
-\item{obs}{A numeric vector or matrix, the observed data. Can be continuous values or dicrete.  Can be aggregated, and if so you \strong{must} supply \code{n} (see below). The default assumes raw data.}
+\item{obs}{A numeric vector or matrix, the observed data.}
 
 \item{pred}{A numeric vector or matrix with predictions, in the same order as \code{obs}.}
 
-\item{na.rm}{(optional) Logical, \code{TRUE} means list-wise removal of \code{NA}, removes all \code{NA} rows found in \code{pred} or \code{obs} jointly.}
+\item{na.rm}{(optional) Logical. \code{TRUE} removes removes all \code{NA} rows found in \code{pred} or \code{obs} jointly (list-wise removal).}
 
-\item{response}{(default \code{"discrete"}) A string with response format, \code{"continuous"} or \code{"discrete"} (e.g., choices). Can be abbreviated. Will be inferred if missing from \code{obs}, \code{pred}.}
+\item{response}{(optional) A string (default \code{"discrete"}), data format. Can also be \code{"continuous"}. Can be abbreviated. If \code{"discrete"}, will apply an \code{\link[arg max]{Argmax}} before computing accuracy.}
 
 \item{...}{arguments from other methods, currently ignored.}
 }
@@ -24,13 +23,16 @@ The percent of accurate predictions between 0 and 1, inclusive, where 1 indicate
 }
 \description{
 Classification Accuracy
-\code{Accuracy()} computes the percent identical values, controlling for perfect chance-level
 }
 \details{
-Note: Accuracy corrects for perfect chance. Perfect chance predictions for discrete responses (e.g. 0.50 for binary responses) yield chance-level accuracy (50 %), rather than zero accuracy.
+\emph{Note.} Accuracy corrects for perfect chance. Perfect chance predictions for discrete responses (e.g. 0.50 for binary responses) yield chance-level accuracy (50 \%), rather than zero accuracy.
 }
 \examples{
-Accuracy(obs = c(1,0,0), pred = c(1,1,1))        # \% accuracy
+Accuracy(obs = c(1,0,0), pred = c(1,1,1))        # 33\% accuracy
+
+# Note how it deals with perfect-chance predictions (0.5)
+Accuracy(obs = c(1,0,0), pred = c(1,0.5,0.5))        # 66\% accuracy
+
 }
 \seealso{
 Other goodness of fit functions: \code{\link{APE}},

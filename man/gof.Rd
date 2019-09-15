@@ -21,7 +21,7 @@ gof_discrete(obs, pred, type, ...)
 
 \item{type}{A string (default \code{"loglikelihood"}) specifying the goodnes-of-fit or error measure, allowed are \code{"sse"} (sum of squared error), \code{"mse"} (mean squared error), \code{"rmse"} (root-mean squared error), \code{"wmse"} (weighted mean squared error), \code{"mape"} (mean absolute percentage error), and \code{"mdape"} (median absolute percentage error), code{"accuracy"} (percent of \code{obs} equal to \code{pred}, after applying an \code{\link{cr_argmax}} choice rule to probabilistic predictions of discrete data).}
 
-\item{na.rm}{(optional) Logical, \code{TRUE} means list-wise removal of \code{NA}, removes all \code{NA} rows found in \code{pred} or \code{obs} jointly.}
+\item{na.rm}{(optional) Logical. \code{TRUE} removes removes all \code{NA} rows found in \code{pred} or \code{obs} jointly (list-wise removal).}
 
 \item{...}{arguments from other methods, currently ignored.}
 

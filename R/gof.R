@@ -7,7 +7,7 @@
 #' @param pred A numeric vector or matrix with predictions, in the same order as \code{obs}.
 #' @param type A string (default \code{"loglikelihood"}) specifying the goodnes-of-fit or error measure, allowed are \code{"sse"} (sum of squared error), \code{"mse"} (mean squared error), \code{"rmse"} (root-mean squared error), \code{"wmse"} (weighted mean squared error), \code{"mape"} (mean absolute percentage error), and \code{"mdape"} (median absolute percentage error), code{"accuracy"} (percent of \code{obs} equal to \code{pred}, after applying an \code{\link{cr_argmax}} choice rule to probabilistic predictions of discrete data).
 #' @param n (default: 1) integer or integer vector, number of observations underlying obs; required if \code{obs}, \code{pred} or both are \bold{aggregated}; \code{n=10} means each aggregate represents \code{10} data points, a vector \code{n=c(10,20)} means the first aggregate represents 10, the second 20 data points, etc.
-#' @param na.rm (optional) Logical, \code{TRUE} means list-wise removal of \code{NA}, removes all \code{NA} rows found in \code{pred} or \code{obs} jointly.
+#' @param na.rm (optional) Logical. \code{TRUE} removes removes all \code{NA} rows found in \code{pred} or \code{obs} jointly (list-wise removal).
 #' @param options (optional) List with options passed to goodness of fit measures
 #' \describe{
 #'    \item{\code{response}}{String specifying the type of observed data: \code{"discrete"} is choice data, \code{"continuous"} is judgment data.  Can be eabbreviated. If empty, will be guessed  discrete if \code{obs} is a factor or character, will be guessed as continuous if \code{pred} is not in 0-1 i.e not a probability.}

@@ -16,7 +16,7 @@ Loglikelihood(obs, pred, pdf = c("binomial", "normal", "truncnormal"),
 
 \item{pdf}{A string, probability density function;, allowed are \code{"binomial"}, \code{"normal"}, \code{"truncnormal"}. When using \code{"normal"} then \code{pred} needs two columns: observed means and observed standard deviations.}
 
-\item{na.rm}{(optional) Logical, \code{TRUE} means list-wise removal of \code{NA}, removes all \code{NA} rows found in \code{pred} or \code{obs} jointly.}
+\item{na.rm}{(optional) Logical. \code{TRUE} removes removes all \code{NA} rows found in \code{pred} or \code{obs} jointly (list-wise removal).}
 
 \item{n}{(default: 1) integer or integer vector, number of observations underlying obs; required if \code{obs}, \code{pred} or both are \bold{aggregated}; \code{n=10} means each aggregate represents \code{10} data points, a vector \code{n=c(10,20)} means the first aggregate represents 10, the second 20 data points, etc.}
 
