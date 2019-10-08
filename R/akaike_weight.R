@@ -1,6 +1,6 @@
 #' Compute akaike weights
 #' 
-#' @param x A numeric vector or matrix with the AIC or log likelihood values
+#' @param x A numeric vector or matrix with AIC or log likelihood values
 #' @param measure A string (default \code{"aic"}), the type of values in \code{x}. Can be one of \code{"aic"}, \code{"loglikelihood"}; can be abbreviated.
 #' @references {Wagenmakers, E., & Farrell, S. (2004). AIC model selection using Akaike weights. \emph{Psychonomic Bulletin & Review, 11(1)}, 192–196. \url{https://doi.org/10.3758/BF03206482}
 #' @examples

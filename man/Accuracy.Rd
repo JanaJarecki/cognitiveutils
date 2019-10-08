@@ -2,7 +2,7 @@
 % Please edit documentation in R/Accuracy.R
 \name{Accuracy}
 \alias{Accuracy}
-\title{Classification Accuracy}
+\title{sAccuracy}
 \usage{
 Accuracy(obs, pred, na.rm = FALSE, response = c("discrete",
   "continuous"), ...)
@@ -22,7 +22,7 @@ Accuracy(obs, pred, na.rm = FALSE, response = c("discrete",
 The percent of accurate predictions between 0 and 1, inclusive, where 1 indicates 100% accuracy.
 }
 \description{
-Classification Accuracy
+sAccuracy
 }
 \details{
 \emph{Note.} Accuracy corrects for perfect chance. Perfect chance predictions for discrete responses (e.g. 0.50 for binary responses) yield chance-level accuracy (50 \%), rather than zero accuracy.
