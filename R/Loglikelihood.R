@@ -42,9 +42,8 @@
 #' @references { Busemeyer, J. R., & Diederich, A. (2010). Nonlinear parameter estimation. In Cognitive Modeling (pp. 43–84). Thousand Oaks, CAL: SAGE Publications. }
 #' @export
 Loglikelihood <- function(obs, pred, pdf = c("binomial", "normal", "truncnormal"), na.rm = FALSE, n = NULL, saturated = FALSE, eps = sqrt(.Machine$double.eps), binomial.coef = FALSE, sigma = NULL, a = NULL, b = NULL, ...) {
-  if (binomial.coef == TRUE & pdf != "binomial") {
-      warning('Ignoring argument binomial.coef, because it can only be used with binomial pdf.')
-    }
+
+  pdf <- match.arg(pdf) # todo: add multinomial
   .args <-  as.list(rlang::call_standardise(match.call())[-1])
   if ( saturated & missing(pred) ) {
     pred <- obs
@@ -53,6 +52,9 @@ Loglikelihood <- function(obs, pred, pdf = c("binomial", "normal", "truncnormal"
   obs <- TMP[['obs']]
   pred <- TMP[['pred']]
   n <- TMP[['n']]
+
+
+  # For normal density we need sigma
   if (!is.null(sigma)) {
     sigma <- array(sigma, dim = dim(pred))
     sigma <- .format_obs_pred_n(sigma, pred, n, na.rm)[["obs"]]
@@ -61,15 +63,13 @@ Loglikelihood <- function(obs, pred, pdf = c("binomial", "normal", "truncnormal"
     pred <- .format_obs_pred_n(sigma, TMP$pred, n, na.rm)[["pred"]]
   }
 
-  pdf <- match.arg(pdf) # todo: add multinomial
-
   if (pdf == "normal") {
     return(sum(dnorm(x = obs, mean = pred, sd = sigma, log = TRUE)))
   } else if (pdf == "truncnormal") {
     a <- ifelse(is.null(.args[["a"]]), -Inf, .args[["a"]])
     b <- ifelse(is.null(.args[["b"]]),  Inf, .args[["b"]])
     dens <- truncnorm::dtruncnorm(x = obs, mean = pred, sd = sigma, a = a, b = b)
-    dens[dens==0] <- eps
+    dens[dens==0] <- eps # ensure dens > 0
     return(sum(log(dens)))
   }
 
@@ -81,7 +81,7 @@ Loglikelihood <- function(obs, pred, pdf = c("binomial", "normal", "truncnormal"
     obs <- obs[,1]
     pred[pred == 0] <- eps # ensure 0 < ped < 1
     pred[pred == 1] <- 1 - eps
-    bc <- if(binomial.coef) { choose(n, round(obs*n)) } else { 1 }
+    bc <- if (binomial.coef) { choose(n, round(obs*n)) } else { 1 }
     return( sum( log(bc) + log(pred) * n * obs + log(1-pred) * n * (1-obs) ) )
   } 
 }
