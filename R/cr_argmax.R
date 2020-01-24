@@ -12,11 +12,12 @@
 #' cr_argmax(cbind(c(0.1, 0.9), c(0.5, 0.4)))      # Returns a matrix
 #' @export
 cr_argmax <-function(x) {
+  .eps <- 1e-32
   x <- as.matrix(x)
   if ( ncol(x) == 1 ) {
     return(cr_argmax(cbind(x, 1-x))[, 1])
   }
-  x[x==0] <- .000001
-  x[] <- t(apply(x, 1, function(z) (z == max(z)) / sum(z == max(z))))
+  x[x==0] <- .eps
+  x[] <- t(apply(x, 1, function(z) ((z - max(z)) < .eps) / sum((z - max(z)) < .eps)))
   return(x)
 }
