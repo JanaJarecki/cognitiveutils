@@ -295,3 +295,24 @@ RowSumMatrix <- function(rs, ncol, intervalls = NULL, boundary.offset = 0.001, n
     x <- gsub("(^|\\.)\\s*([a-z])", "\\1 \\U\\2", x, perl = TRUE)
     return(trimws(x))
 }
+
+
+
+#' Drop the second dimension
+#' 
+#' Drop the second dimension of an array or matrix
+#' 
+#' @param x An object of type array or matrix
+#' @export
+drop2 <- function(x) {
+  d <- dim(x)
+  if (is.null(d)) {
+    return(x)
+  } else {
+    if (d[2] != 1) {
+      return(x)
+    } else {
+      return(abind::adrop(x, drop = 2))
+    }
+  }
+}

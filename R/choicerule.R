@@ -54,5 +54,5 @@ choicerule <- function(x, type = c("softmax", "luce", "argmax", "epsilon"), tole
     stop("There are NAs or Inf values in your prediction, this is not allowed.")
   }
   out[nas] <- NA
-  return(drop(out))
+  return(drop2(out))
 }
