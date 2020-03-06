@@ -29,9 +29,13 @@ Mean of squared deviations between \code{obs} and \code{pred}
 # None so far
 }
 \seealso{
-Other goodness of fit functions: \code{\link{APE}},
-  \code{\link{Accuracy}}, \code{\link{MAPE}},
-  \code{\link{MDAPE}}, \code{\link{RMSE}},
-  \code{\link{SSE}}, \code{\link{gof}}
+Other goodness of fit functions: 
+\code{\link{APE}()},
+\code{\link{Accuracy}()},
+\code{\link{MAPE}()},
+\code{\link{MDAPE}()},
+\code{\link{RMSE}()},
+\code{\link{SSE}()},
+\code{\link{gof}()}
 }
 \concept{goodness of fit functions}

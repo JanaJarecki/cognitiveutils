@@ -4,10 +4,20 @@
 \alias{Loglikelihood}
 \title{Log likelihood (log loss)}
 \usage{
-Loglikelihood(obs, pred, pdf = c("binomial", "normal", "truncnormal"),
-  na.rm = FALSE, n = NULL, saturated = FALSE,
-  eps = sqrt(.Machine$double.eps), binomial.coef = FALSE,
-  sigma = NULL, a = NULL, b = NULL, ...)
+Loglikelihood(
+  obs,
+  pred,
+  pdf = c("binomial", "normal", "truncnormal"),
+  na.rm = FALSE,
+  n = NULL,
+  saturated = FALSE,
+  eps = sqrt(.Machine$double.eps),
+  binomial.coef = FALSE,
+  sigma = NULL,
+  a = NULL,
+  b = NULL,
+  ...
+)
 }
 \arguments{
 \item{obs}{A numeric vector or matrix, the observed data. Can be continuous values or dicrete.  Can be aggregated, and if so you \strong{must} supply \code{n} (see below). The default assumes raw data.}

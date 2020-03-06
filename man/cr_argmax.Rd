@@ -4,7 +4,7 @@
 \alias{cr_argmax}
 \title{Apply an arg max choice rule}
 \usage{
-cr_argmax(x)
+cr_argmax(x, tol = sqrt(.Machine$double.eps))
 }
 \arguments{
 \item{x}{A numeric vector or matrix with probabilistic predictions for actions. If \code{x} is a vector, binary actions are assumed. If \code{x} is a matrix, column 1 holds predictions for action 1, column 2 for action 2, etc.}

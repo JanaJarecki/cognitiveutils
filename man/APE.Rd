@@ -47,10 +47,14 @@ pred <- c(0.7, 0.4, 0.8)
 APE(obs, pred, response = 'd')
 }
 \seealso{
-Other goodness of fit functions: \code{\link{Accuracy}},
-  \code{\link{MAPE}}, \code{\link{MDAPE}},
-  \code{\link{MSE}}, \code{\link{RMSE}}, \code{\link{SSE}},
-  \code{\link{gof}}
+Other goodness of fit functions: 
+\code{\link{Accuracy}()},
+\code{\link{MAPE}()},
+\code{\link{MDAPE}()},
+\code{\link{MSE}()},
+\code{\link{RMSE}()},
+\code{\link{SSE}()},
+\code{\link{gof}()}
 }
 \author{
 Jana B. Jarecki, \email{jj@janajarecki.com}, Florian Seitz

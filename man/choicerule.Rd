@@ -4,8 +4,12 @@
 \alias{choicerule}
 \title{Apply a choice rule (action selection rule) to probabilistic predictions.}
 \usage{
-choicerule(x, type = c("softmax", "luce", "argmax", "epsilon"),
-  tolerance = sqrt(.Machine$double.eps), ...)
+choicerule(
+  x,
+  type = c("softmax", "luce", "argmax", "epsilon"),
+  tolerance = sqrt(.Machine$double.eps),
+  ...
+)
 }
 \arguments{
 \item{x}{A numeric vector or matrix with probabilistic predictions for actions. If \code{x} is a vector, binary actions are assumed. If \code{x} is a matrix, column 1 holds predictions for action 1, column 2 for action 2, etc. \code{0 <= x <= 1} is required.}

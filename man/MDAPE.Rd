@@ -30,10 +30,14 @@ obs <- c(1150, 1400, 1200, 1350, 1100, 1300)
 MDAPE(obs, pred, response = "con")
 }
 \seealso{
-Other goodness of fit functions: \code{\link{APE}},
-  \code{\link{Accuracy}}, \code{\link{MAPE}},
-  \code{\link{MSE}}, \code{\link{RMSE}}, \code{\link{SSE}},
-  \code{\link{gof}}
+Other goodness of fit functions: 
+\code{\link{APE}()},
+\code{\link{Accuracy}()},
+\code{\link{MAPE}()},
+\code{\link{MSE}()},
+\code{\link{RMSE}()},
+\code{\link{SSE}()},
+\code{\link{gof}()}
 }
 \author{
 Jana B. Jarecki, \email{jj@janajarecki.com}, Florian Seitz

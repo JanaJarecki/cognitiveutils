@@ -4,10 +4,23 @@
 \alias{participants}
 \title{Print the participant section for a manuscript from a data.frame}
 \usage{
-participants(data, id, age, gender, excl, date = NULL,
-  recruitedfrom = NULL, collectedat = NULL, approvedby = NULL,
-  compensation = NULL, gender.label = NULL, date.format = NULL,
-  currency = "US dollar", more = NULL, file = NULL)
+participants(
+  data,
+  id,
+  age,
+  gender,
+  excl,
+  date = NULL,
+  recruitedfrom = NULL,
+  collectedat = NULL,
+  approvedby = NULL,
+  compensation = NULL,
+  gender.label = NULL,
+  date.format = NULL,
+  currency = "US dollar",
+  more = NULL,
+  file = NULL
+)
 }
 \arguments{
 \item{data}{data object for which the demographics should be printed.}

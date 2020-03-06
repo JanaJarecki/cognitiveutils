@@ -19,3 +19,6 @@ aic_values <- c(204, 202, 206, 206, 214) # some AIC values
 akaike_weight(aic_values)
 
 }
+\references{
+
+}

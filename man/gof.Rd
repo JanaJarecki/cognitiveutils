@@ -6,9 +6,16 @@
 \alias{gof_discrete}
 \title{Compute goodness of fit measures}
 \usage{
-gof(obs, pred, type = c("loglikelihood", "mse", "wmse", "rmse", "sse",
-  "wsse", "mape", "mdape", "accuracy"), na.rm = FALSE, ...,
-  options = list(), n = NULL)
+gof(
+  obs,
+  pred,
+  type = c("loglikelihood", "mse", "wmse", "rmse", "sse", "wsse", "mape", "mdape",
+    "accuracy"),
+  na.rm = FALSE,
+  ...,
+  options = list(),
+  n = NULL
+)
 
 gof_continuous(obs, pred, type, ...)
 
@@ -109,9 +116,13 @@ gof_discrete(obs, obsraw, "loglik", saturated=TRUE, n=200) # Saturated LL (paper
 Busemeyer, J. R., & Diederich, A. (2010). Nonlinear parameter estimation. In Cognitive Modeling (pp. 43–84). Thousand Oaks, CAL: SAGE Publications.
 }
 \seealso{
-Other goodness of fit functions: \code{\link{APE}},
-  \code{\link{Accuracy}}, \code{\link{MAPE}},
-  \code{\link{MDAPE}}, \code{\link{MSE}},
-  \code{\link{RMSE}}, \code{\link{SSE}}
+Other goodness of fit functions: 
+\code{\link{APE}()},
+\code{\link{Accuracy}()},
+\code{\link{MAPE}()},
+\code{\link{MDAPE}()},
+\code{\link{MSE}()},
+\code{\link{RMSE}()},
+\code{\link{SSE}()}
 }
 \concept{goodness of fit functions}

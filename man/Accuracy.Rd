@@ -4,8 +4,7 @@
 \alias{Accuracy}
 \title{sAccuracy}
 \usage{
-Accuracy(obs, pred, na.rm = FALSE, response = c("discrete",
-  "continuous"), ...)
+Accuracy(obs, pred, na.rm = FALSE, response = c("discrete", "continuous"), ...)
 }
 \arguments{
 \item{obs}{A numeric vector or matrix, the observed data.}
@@ -35,9 +34,13 @@ Accuracy(obs = c(1,0,0), pred = c(1,0.5,0.5))        # 66\% accuracy
 
 }
 \seealso{
-Other goodness of fit functions: \code{\link{APE}},
-  \code{\link{MAPE}}, \code{\link{MDAPE}},
-  \code{\link{MSE}}, \code{\link{RMSE}}, \code{\link{SSE}},
-  \code{\link{gof}}
+Other goodness of fit functions: 
+\code{\link{APE}()},
+\code{\link{MAPE}()},
+\code{\link{MDAPE}()},
+\code{\link{MSE}()},
+\code{\link{RMSE}()},
+\code{\link{SSE}()},
+\code{\link{gof}()}
 }
 \concept{goodness of fit functions}

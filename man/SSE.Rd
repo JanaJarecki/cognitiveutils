@@ -48,9 +48,13 @@ wsse <- SSE(obs = obs, pred = cbind(pred, 1-pred), weighted = TRUE, n = 200)
 Busemeyer, J. R., & Diederich, A. (2010). Nonlinear parameter estimation. In Cognitive Modeling (pp. 43–84). Thousand Oaks, CAL: SAGE Publications.
 }
 \seealso{
-Other goodness of fit functions: \code{\link{APE}},
-  \code{\link{Accuracy}}, \code{\link{MAPE}},
-  \code{\link{MDAPE}}, \code{\link{MSE}},
-  \code{\link{RMSE}}, \code{\link{gof}}
+Other goodness of fit functions: 
+\code{\link{APE}()},
+\code{\link{Accuracy}()},
+\code{\link{MAPE}()},
+\code{\link{MDAPE}()},
+\code{\link{MSE}()},
+\code{\link{RMSE}()},
+\code{\link{gof}()}
 }
 \concept{goodness of fit functions}
