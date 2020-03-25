@@ -1,13 +1,18 @@
 Package: cogsciutils
 Type: Package
-Title: CogSciUtils
-Version: 1.0.6
-Date: 2018-06-27
-Author: Jana B.Jarecki
-Maintainer: Jana B. Jarecki <jj@janajarecki.com>
-Description: The package contains functions for simulating, fitting, and predicting cognitive models, for example to calculate the log likelihood, the sum of squared errors, or the weighted sum of squared errors.
-Imports: stats, combinat, english, lubridate, data.table
+Title: Utility functions for cognitive science and cognitive modeling
+Version: 1.0.7
+Authors@R: person("Jana B.", "Jarecki", email = "jj@janajarecki.com",
+                  role = c("aut", "cre"))
+Description: The package contains functions for calculating model fits, choice rules, and other useful functions for cognitive scientists.
+Imports:
+  combinat,
+  english,
+  data.table,
+  lubridate,
+  stats
 License: GPL-3
-Suggests: testthat
+Suggests:
+  testthat
 Encoding: UTF-8
 RoxygenNote: 7.0.2
