@@ -75,7 +75,10 @@ Loglikelihood <- function(obs, pred, pdf = c("binomial", "normal", "truncnormal"
 
   if ( pdf == "binomial" ) {
     if (!.isbetween(pred, 0, 1)) {
-      stop('"pred" in loglikelihood must be > 0 and < 1 for discrete response and binomial PDF,\n\trange(pred): ', .brackify(range(pred)), '. Adjust "pred" or "response"/"pdf" type.', call. = FALSE)
+      stop("Prediction must range from 0.00 to 1.00, but they range from ", paste(sprintf("%.2f", range(pred)), collapse = " to "), ".",
+      "\n  * Are you sure your predictions are binary or proportions (0 to 1)?",
+      "\n  * Are you sure you want the log likelihood with binomial PDF?"
+      , call. = FALSE)
     }
     pred <- pred[,1]
     obs <- obs[,1]
