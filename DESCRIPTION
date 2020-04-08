@@ -1,4 +1,4 @@
-Package: cogsciutils
+Package: cognitiveutils
 Type: Package
 Title: Utility functions for cognitive science and cognitive modeling
 Version: 1.0.7
