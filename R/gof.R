@@ -79,14 +79,14 @@ gof <-function(obs, pred, type = c('loglikelihood', 'mse', 'wmse', 'rmse', 'sse'
   return(
     switch(type,
       loglikelihood = do.call(Loglikelihood, .a),
-      sse = do.call(cogsciutils::SSE, .a),
-      wsse  = do.call(cogsciutils::SSE, c(.a, weighted = TRUE)),
-      mse = do.call(cogsciutils::MSE, .a),
-      wmse = do.call(cogsciutils::MSE, c(.a, weighted = TRUE)),
-      rmse = do.call(cogsciutils::RMSE, c(.a)),
-      mape = do.call(cogsciutils::MAPE, c(.a)),
-      mdape = do.call(cogsciutils::MDAPE, c(.a)),
-      accuracy = do.call(cogsciutils::Accuracy, c(.a))
+      sse = do.call(cognitiveutils::SSE, .a),
+      wsse  = do.call(cognitiveutils::SSE, c(.a, weighted = TRUE)),
+      mse = do.call(cognitiveutils::MSE, .a),
+      wmse = do.call(cognitiveutils::MSE, c(.a, weighted = TRUE)),
+      rmse = do.call(cognitiveutils::RMSE, c(.a)),
+      mape = do.call(cognitiveutils::MAPE, c(.a)),
+      mdape = do.call(cognitiveutils::MDAPE, c(.a)),
+      accuracy = do.call(cognitiveutils::Accuracy, c(.a))
     )
   )
 }

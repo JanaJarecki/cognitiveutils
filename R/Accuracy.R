@@ -23,7 +23,7 @@
 Accuracy <- function(obs, pred, na.rm = FALSE, response = c("discrete", "continuous"), ...) {
   response <- match.arg(response, c("discrete", 'continuous'))
   if (response == "discrete") {
-    pred <- cogsciutils::cr_argmax(pred)
+    pred <- cognitiveutils::cr_argmax(pred)
   }
   return(mean((1 - abs(as.matrix(obs) - as.matrix(pred)))[,1]))
 }

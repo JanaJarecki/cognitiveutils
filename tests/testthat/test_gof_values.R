@@ -1,5 +1,4 @@
 Sys.setenv("R_TESTS" = "")
-# library(cogsciutils)
 context("Goodness of fit measures")
 
 test_that("Loglikelihood values", {
