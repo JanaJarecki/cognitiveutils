@@ -23,17 +23,19 @@
 #' Predictions are aggregated if \code{n} is supplied: Each value in \code{pred} predicts \code{n} observations. If \code{obs} and \code{pred} are equally long and \code{n} is supplied, then it is assumed that \code{obs} represent the mean predictions across \code{n} values.
 #' @examples
 #' gof(c(.33, .66), c(1,0), "mse")
+#' gof(c(.33, .66), c(1,0), "loglikelihood")
+#' gof(c(.33, .66), c(1,0), "loglikelihood", options = list(response = "d"))
 #' @references Busemeyer, J. R., & Diederich, A. (2010). Nonlinear parameter estimation. In Cognitive Modeling (pp. 43–84). Thousand Oaks, CAL: SAGE Publications.
 #' @family goodness of fit functions
 #' @export
-gof <-function(obs, pred, type = c('loglikelihood', 'mse', 'wmse', 'rmse', 'sse', 'wsse', 'mape', 'mdape', 'accuracy'), na.rm = FALSE, ..., options = list(), n = NULL) {
+gof <- function(obs, pred, type = c('loglikelihood', 'mse', 'wmse', 'rmse', 'sse', 'wsse', 'mape', 'mdape', 'accuracy'), na.rm = FALSE, ..., options = list(), n = NULL) {
   type <- match.arg(type)
   if ( is.null(options$response) ) {
     tmp <- .format_obs_pred_n(obs, pred, n, na.rm)
     response <- .guessResponse(tmp$obs, tmp$pred, tmp$n)
     if ( is.null(response) ) {
       response <- 'discrete'
-      message('Unclear if observations are continuous or discrete, assuming discrete choice data (not continuous judgments), change by using options = list(response = "continuous").')
+      message("Setting response to discrete. \n  * If 'obs' is contiuous, set options = list(response = 'continuous').")
       }
   } else { 
     response <- match.arg(options$response, c('discrete', 'continuous'))
@@ -61,7 +63,8 @@ gof <-function(obs, pred, type = c('loglikelihood', 'mse', 'wmse', 'rmse', 'sse'
   if ( is.character(obs) | is.factor(obs) ) {
     obs <- .check_factor(obs, pred)
   }
-  TMP <- .format_obs_pred_n(obs[,1,drop=FALSE], pred, n, na.rm)
+  # obs[, 1, drop = FALSE]
+  TMP <- .format_obs_pred_n(obs, pred, n, na.rm)
   obs <- TMP$obs
   pred <- TMP$pred
   n <- TMP$n
@@ -113,7 +116,7 @@ gof <-function(obs, pred, type = c('loglikelihood', 'mse', 'wmse', 'rmse', 'sse'
 .check_factor <- function(obs, pred) {
   if ( ncol(as.matrix(pred)) > 1 ) {
     if ( ncol(pred) < length(unique(obs)) ) {
-      stop('"pred" in gof needs as many columns as there are unique value in obs,\n\tbut ncol(pred): ', ncol(pred), ' and length(unique(obs)): ', length(unique(obs)), ".")
+      stop("'pred' in gof() must have the same number of columns as the number of unique value in 'obs', but 'pred' has ", ncol(pred), " columns, and 'obs' has ", length(unique(obs)), "unique values.")
     } else if( is.null(colnames(pred)) ) {
         return(factor)
       } else  {

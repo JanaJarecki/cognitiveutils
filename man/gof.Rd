@@ -55,6 +55,8 @@ Predictions are aggregated if \code{n} is supplied: Each value in \code{pred} pr
 }
 \examples{
 gof(c(.33, .66), c(1,0), "mse")
+gof(c(.33, .66), c(1,0), "loglikelihood")
+gof(c(.33, .66), c(1,0), "loglikelihood", options = list(response = "d"))
 # Example from Busemeyer and Diederich (2010)
 # Observed relative frequencies of binary choices
 obs <- c(0.9538, 0.9107, 0.9204, 0.9029, 0.8515, 0.9197,

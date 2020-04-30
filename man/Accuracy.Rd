@@ -13,7 +13,7 @@ Accuracy(obs, pred, na.rm = FALSE, response = c("discrete", "continuous"), ...)
 
 \item{na.rm}{(optional) Logical. \code{TRUE} removes removes all \code{NA} rows found in \code{pred} or \code{obs} jointly (list-wise removal).}
 
-\item{response}{(optional) A string (default \code{"discrete"}), data format. Can also be \code{"continuous"}. Can be abbreviated. If \code{"discrete"}, will apply an \code{\link[arg max]{Argmax}} before computing accuracy.}
+\item{response}{(optional) A string (default \code{"discrete"}), data format. Can also be \code{"continuous"}. Can be abbreviated. If \code{"discrete"}, will apply an \code{\link{cr_argmax}} before computing accuracy.}
 
 \item{...}{arguments from other methods, currently ignored.}
 }

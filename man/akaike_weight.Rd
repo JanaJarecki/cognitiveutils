@@ -20,5 +20,5 @@ akaike_weight(aic_values)
 
 }
 \references{
-
+{Wagenmakers, E., & Farrell, S. (2004). AIC model selection using Akaike weights. \emph{Psychonomic Bulletin & Review, 11(1)}, 192–196. \url{https://doi.org/10.3758/BF03206482}}
 }

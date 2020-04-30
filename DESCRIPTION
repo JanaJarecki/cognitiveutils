@@ -6,13 +6,15 @@ Authors@R: person("Jana B.", "Jarecki", email = "jj@janajarecki.com",
                   role = c("aut", "cre"))
 Description: The package contains functions for calculating model fits, choice rules, and other useful functions for cognitive scientists.
 Imports:
+  abind,
   combinat,
-  english,
   data.table,
+  english,
   lubridate,
+  rlang,
   stats,
   truncnorm
-License: GPL-3
+License: GPL-3 + file LICENSE
 Suggests:
   testthat
 Encoding: UTF-8

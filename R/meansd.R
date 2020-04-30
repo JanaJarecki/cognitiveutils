@@ -14,13 +14,13 @@ meansd <- function(x, na.rm = TRUE) {
 }
 
 
-#' Computes the mean and standard deviation and formats them as string
+#' Print method for objects of class \code{"meansd"}
 #'
 #' @param x A numeric vector
-#' @param label (default \code{TRUE}) Logical, if true M and SD are added as labels
-#' @param na.rm Logical, whether to remove \code{NA} values in \code{x).
-#' @param digits The number of digits to print
-#' @return A string holding the mean m und standard deviation sd as \code{"m (sd)")" or \code{"M = m, SD = sd"}
+#' @param label (default \code{TRUE}) Logical, \code{TRUE} adds "M" and "SD" as labels.
+#' @param na.rm Logical, whether to remove \code{NA} values in \code{x}.
+#' @param digits The number of digits to print.
+#' @return A string holding the mean m und standard deviation sd as \code{"m (sd)"} or \code{"M = m, SD = sd"}
 print.meansd <- function(x, digits = 2, na.rm = TRUE, label = FALSE){
   if (all(is.na(x))) {
     return(NA_character_)

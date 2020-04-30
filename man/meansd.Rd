@@ -19,5 +19,5 @@ Compuate mean and (finite-sample corrected) standard deviation
 }
 \examples{
 x <- sample(1:100)
-msd(x)
+meansd(x)
 }

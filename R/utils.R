@@ -302,6 +302,7 @@ RowSumMatrix <- function(rs, ncol, intervalls = NULL, boundary.offset = 0.001, n
 #' 
 #' Drop the second dimension of an array or matrix
 #' 
+#' @importFrom abind adrop
 #' @param x An object of type array or matrix
 #' @export
 drop2 <- function(x) {
