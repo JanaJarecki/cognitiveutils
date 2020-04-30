@@ -1,6 +1,3 @@
-Sys.setenv("R_TESTS" = "")
-context("Goodness of fit measures")
-
 test_that("Loglikelihood values", {
   # Busemeyer & Diederich (2010)
   n <- 200
