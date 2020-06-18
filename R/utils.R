@@ -63,10 +63,10 @@
     pred <- aggregate(pred, list(rep(seq_along(n), times=n)), mean)[,-1, drop=FALSE]
   }
   if ( na.rm ) {
-    nas <- is.na(obs) | is.na(pred)
-    obs <- obs[!nas, , drop = FALSE]
-    pred <- pred[!nas, , drop = FALSE]
-    n <- n[!nas]
+    complete <- complete.cases(cbind(obs, pred, n))
+    obs <- obs[complete, , drop = FALSE]
+    pred <- pred[complete, , drop = FALSE]
+    n <- n[complete]
   }
   return(list(obs = as.matrix(obs), pred = as.matrix(pred), n = n))
 }

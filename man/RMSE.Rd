@@ -11,7 +11,7 @@ RMSE(obs, pred, na.rm = FALSE, weighted = FALSE, n = NULL, ...)
 
 \item{pred}{A numeric vector or matrix with predictions, in the same order as \code{obs}.}
 
-\item{na.rm}{(optional) Logical. \code{TRUE} removes removes all \code{NA} rows found in \code{pred} or \code{obs} jointly (list-wise removal).}
+\item{na.rm}{(optional) Logical (default \code{FALSE}). \code{TRUE} removes all \code{NA} rows in \code{pred} or \code{obs} jointly (list-wise removal).}
 
 \item{weighted}{(optional) Logical (dfault \code{FALSE}), if \code{TRUE} variance-weighted sums of squares are calculated, otherwise unweighted sums of squares.}
 

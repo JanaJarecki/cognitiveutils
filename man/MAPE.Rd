@@ -13,7 +13,7 @@ MAPE(obs, pred, response, ...)
 
 \item{response}{(default \code{"discrete"}) A string with response format, \code{"continuous"} or \code{"discrete"} (e.g., choices). Can be abbreviated. Will be inferred if missing from \code{obs}, \code{pred}.}
 
-\item{...}{arguments from other methods, currently ignored.}
+\item{...}{more arguments to be passed on to the fitting functions, see e.g. \code{\link[=loglikelihood]{loglikelihood()}}}
 }
 \value{
 Mean absolute percentage error between \code{obs} and \code{pred}

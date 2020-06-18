@@ -11,11 +11,11 @@ Accuracy(obs, pred, na.rm = FALSE, response = c("discrete", "continuous"), ...)
 
 \item{pred}{A numeric vector or matrix with predictions, in the same order as \code{obs}.}
 
-\item{na.rm}{(optional) Logical. \code{TRUE} removes removes all \code{NA} rows found in \code{pred} or \code{obs} jointly (list-wise removal).}
+\item{na.rm}{(optional) Logical (default \code{FALSE}). \code{TRUE} removes all \code{NA} rows in \code{pred} or \code{obs} jointly (list-wise removal).}
 
 \item{response}{(optional) A string (default \code{"discrete"}), data format. Can also be \code{"continuous"}. Can be abbreviated. If \code{"discrete"}, will apply an \code{\link{cr_argmax}} before computing accuracy.}
 
-\item{...}{arguments from other methods, currently ignored.}
+\item{...}{more arguments to be passed on to the fitting functions, see e.g. \code{\link[=loglikelihood]{loglikelihood()}}}
 }
 \value{
 The percent of accurate predictions between 0 and 1, inclusive, where 1 indicates 100% accuracy.
