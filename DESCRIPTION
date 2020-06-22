@@ -1,7 +1,7 @@
 Package: cognitiveutils
 Type: Package
 Title: Utility functions for cognitive science and cognitive modeling
-Version: 0.0.10
+Version: 0.0.11
 Authors@R: person("Jana B.", "Jarecki", email = "jj@janajarecki.com",
                   role = c("aut", "cre"))
 Description: The package contains functions for calculating model fits, choice rules, and other useful functions for cognitive scientists.
