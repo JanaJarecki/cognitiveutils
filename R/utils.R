@@ -50,6 +50,12 @@
   if ( length(n) == 1 ) {
     n <- rep(n, min(nrow(obs),nrow(pred)) )
   }
+  if ( na.rm ) {
+    complete <- complete.cases(cbind(obs, pred, n))
+    obs <- obs[complete, , drop = FALSE]
+    pred <- pred[complete, , drop = FALSE]
+    n <- n[complete]
+  }
   if ( length(n) != min(nrow(obs),nrow(pred)) ) {
       stop('"n" needs length 1 or min(nrow(obs), nrow(pred)),\n\tlength(n)=', length(n), ' and min nrow=', min(nrow(obs),nrow(pred)), '. Check "n".', call.=FALSE)
   }
@@ -61,12 +67,6 @@
   }
   if ( nrow(pred) > nrow(obs) ) { # obs is aggregated
     pred <- aggregate(pred, list(rep(seq_along(n), times=n)), mean)[,-1, drop=FALSE]
-  }
-  if ( na.rm ) {
-    complete <- complete.cases(cbind(obs, pred, n))
-    obs <- obs[complete, , drop = FALSE]
-    pred <- pred[complete, , drop = FALSE]
-    n <- n[complete]
   }
   return(list(obs = as.matrix(obs), pred = as.matrix(pred), n = n))
 }
