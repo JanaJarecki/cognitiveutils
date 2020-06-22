@@ -23,7 +23,7 @@
   if ( !missing(y) ) {
     if ( !.isbetween(y, 0, 1) ) { # prediction is not a probability?
       return('continuous')
-    } else if ( max(x) - min(x) > 1 ) { # prediction prob and observation binary
+    } else if ( max(x, na.rm = TRUE) - min(x, na.rm = TRUE) > 1 ) { # prediction prob and observation binary
       return('discrete')
     } else if ( .isbetween(y, 0, 1) & .isbetween(x, 0, 1) ) #obs & pred in [0,1]
       if ( ncol(as.matrix(x) ) > 1 ) { # sd specified in obs
