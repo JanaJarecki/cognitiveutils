@@ -9,7 +9,7 @@
 #' @param n (optional) Integer or integer vector (default: 1), number of observations underlying obs if `obs`, `pred` or both are \bold{aggregated}: `n=10` means each aggregate represents 10 data points, a vector `n=c(10,20)` means the first aggregate represents 10, the second 20 data points, etc.
 #' @param na.rm (optional) Logical (default `FALSE`). `TRUE` removes all `NA` rows in `pred` or `obs` jointly (list-wise removal).
 #' @param response (optional) String, the type of observed data, `"discrete"` or `"continuous"`. Can be eabbreviated. Will be guessed as discrete if `"obs"` is a factor or character, and as continuous if `"pred"` is not in 0-1.
-#' @param pdf (optional) String, probability density function in log likelihood, allowed values see [Loglikelihood()]
+#' @param pdf (optional) String, probability density function in log likelihood, allowed values see [loglikelihood()]
 #' @param saturated (optional) Logical (default `FALSE`) `TRUE` returns saturated log likelihood.
 #' @param binomial.coef (optional) Logical (default `FALSE`), `TRUE` adds the binomial coefficient to a binomial log likelihood.
 #' @param a (optional) Number, lower bound in truncated normal distribution if `pdf = "truncnorm"`.
