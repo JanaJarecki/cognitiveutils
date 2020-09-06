@@ -12,6 +12,8 @@
 #' @param pdf (optional) String, probability density function in log likelihood, allowed values see [Loglikelihood()]
 #' @param saturated (optional) Logical (default `FALSE`) `TRUE` returns saturated log likelihood.
 #' @param binomial.coef (optional) Logical (default `FALSE`), `TRUE` adds the binomial coefficient to a binomial log likelihood.
+#' @param a (optional) Number, lower bound in truncated normal distribution if `pdf = "truncnorm"`.
+#' @param b (optional) Number, upper bound in truncated normal distribution if `pdf = "truncnorm"`.
 #' @param ... more arguments to be passed on to the fitting functions, see e.g. [loglikelihood()]
 #' @return The goodness of fit.
 #' @details 
@@ -26,7 +28,7 @@
 #' @md
 #' @family goodness of fit functions
 #' @export
-gof <- function(obs, pred, type = c('loglikelihood', 'mse', 'wmse', 'rmse', 'sse', 'wsse', 'mape', 'mdape', 'accuracy'), na.rm = FALSE, pdf = NULL, response = NULL, saturated = FALSE, binomial.coef = FALSE, ..., n = NULL) {
+gof <- function(obs, pred, type = c('loglikelihood', 'mse', 'wmse', 'rmse', 'sse', 'wsse', 'mape', 'mdape', 'accuracy'), na.rm = FALSE, pdf = NULL, response = NULL, saturated = FALSE, binomial.coef = FALSE, a, b, ..., n = NULL) {
   options <- c(list(
     pdf = pdf,
     response = response,

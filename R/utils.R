@@ -42,7 +42,7 @@
 .format_obs_pred_n <- function(obs, pred, n, na.rm) {
   obs <- as.matrix(obs)
   pred <- as.matrix(pred)
-  if ( is.null(n) ) {
+  if (missing(n) || length(n) == 0L) {
     n <- 1
   } else {
     n <- as.vector(as.numeric(n))

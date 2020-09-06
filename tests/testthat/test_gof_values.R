@@ -1,4 +1,4 @@
-test_that("Loglikelihood values", {
+test_that("loglikelihood values", {
   # Busemeyer & Diederich (2010)
   n <- 200
   o <- c(.9538, .9107, .9204, .9029, .8515, .9197, .7970, .8228, .8191, .7277, .7276)
@@ -6,10 +6,10 @@ test_that("Loglikelihood values", {
   or  <- rep(rep(0:1, 11), round(c(t(cbind(1-o, o))) * n))
   pr <- rep(p, each = n)
   ll <- -969.95 # Busemeyer p. 58
-  expect_equal(Loglikelihood(or, pr), ll, tol = .001)
-  expect_equal(Loglikelihood(o, p, n = n), ll, tol = .001)
-  expect_equal(Loglikelihood(o, p, n = rep(200, 11)), ll, tol = .001)
-  expect_equal(Loglikelihood(or, p, n = n), ll, tol = .001)
+  expect_equal(loglikelihood(or, pr), ll, tol = .001)
+  expect_equal(loglikelihood(o, p, n = n), ll, tol = .001)
+  expect_equal(loglikelihood(o, p, n = rep(200, 11)), ll, tol = .001)
+  expect_equal(loglikelihood(or, p, n = n), ll, tol = .001)
   expect_equal(gof(or, pr), ll, tol = .001)
   expect_equal(gof(o, p, options = list(response = 'd'), n = n), ll, tol = .001)
   expect_equal(gof(or, p, options = list(response = 'd'), n = n), ll, tol = .001)
@@ -21,8 +21,8 @@ test_that("Loglikelihood values", {
   p2lse <- 1.092 * exp(-0.141 * c(1,3,6,9,12,18)) # Table 1
   n2 <- 100
   ll <- -305.31 # Myung, Table 1
-  expect_equal(Loglikelihood(o2, p2mle, n = n2), ll, tol = .0001)
-  expect_equal(Loglikelihood(o2, p2mle, n = rep(n2, length(o2))), ll, tol = .0001)
+  expect_equal(loglikelihood(o2, p2mle, n = n2), ll, tol = .0001)
+  expect_equal(loglikelihood(o2, p2mle, n = rep(n2, length(o2))), ll, tol = .0001)
   expect_equal(gof(o2, p2mle, r = 'd', n = n2), ll, tol = .001) 
 })
 
@@ -34,15 +34,15 @@ test_that("Saturated loglikelihood values", {
   or  <- rep(rep(0:1, 11), round(c(t(cbind(1-o, o))) * n))
   pr <- rep(p, each = n)
   ll <- -879.9013
-  expect_equal(Loglikelihood(or, o, n = n), ll, tol = .01)
-  expect_equal(Loglikelihood(o, n = n, saturated = TRUE), ll, tol = .01)
-  expect_equal(Loglikelihood(o, o, n = n, saturated = TRUE), ll, tol = .001)
+  expect_equal(loglikelihood(or, o, n = n), ll, tol = .01)
+  expect_equal(loglikelihood(o, n = n, saturated = TRUE), ll, tol = .01)
+  expect_equal(loglikelihood(o, o, n = n, saturated = TRUE), ll, tol = .001)
   expect_equal(gof(o, o, n = n, options = list(r = 'd', saturated = TRUE)), ll, tol = .01)
 })
 
-test_that("Loglikelihood input formats", { #todo
-  expect_error(Loglikelihood(obs = 1:2, pred = 1))
-  expect_error(Loglikelihood(obs = 1:2, pred = 1:2, pdf = "binomial"))
+test_that("loglikelihood input formats", { #todo
+  expect_error(loglikelihood(obs = 1:2, pred = 1))
+  expect_error(loglikelihood(obs = 1:2, pred = 1:2, pdf = "binomial"))
   expect_error(gof(obs = 1:2, pred = 1:2))
   expect_error(gof(obs = 1:2, pred = 1))
 })
